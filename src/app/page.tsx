@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -5,29 +6,61 @@ import { Card, CardContent } from "@/components/ui/card";
 const services = [
   {
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
       </svg>
     ),
     title: "Applied Research",
-    description: "Baseline surveys, impact evaluations, market assessments, and KAP studies to support evidence-based decision making.",
+    description:
+      "Baseline surveys, impact evaluations, market assessments, and KAP studies to support evidence-based decision making.",
     color: "from-ileys-green to-ileys-green-light",
   },
   {
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
         <path d="M6 12v5c3 3 9 3 12 0v-5" />
       </svg>
     ),
     title: "Training Programs",
-    description: "Customized capacity building programs in project management, leadership, research methods, and organizational development.",
+    description:
+      "Customized capacity building programs in project management, leadership, research methods, and organizational development.",
     color: "from-ileys-yellow to-ileys-yellow-light",
   },
   {
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
         <circle cx="9" cy="7" r="4" />
         <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
@@ -35,7 +68,8 @@ const services = [
       </svg>
     ),
     title: "Consulting Services",
-    description: "Strategic management, institutional development, and practical solutions for organizational challenges.",
+    description:
+      "Strategic management, institutional development, and practical solutions for organizational challenges.",
     color: "from-ileys-red to-ileys-red-light",
   },
 ];
@@ -47,12 +81,7 @@ const stats = [
   { value: "100+", label: "Professionals Trained" },
 ];
 
-const partners = [
-  "SAFE",
-  "World Vision",
-  "COOPI",
-  "DRC",
-];
+const partners = ["SAFE", "World Vision", "COOPI", "DRC"];
 
 const competencies = [
   { title: "Strategic Management", icon: "📊" },
@@ -87,33 +116,53 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ileys-green/10 backdrop-blur-sm border border-ileys-green/20 mb-8 animate-fade-in-down">
               <span className="w-2 h-2 rounded-full bg-ileys-green animate-pulse" />
-              <span className="text-ileys-green-dark text-sm font-medium">Trusted by Leading Organizations in Somalia</span>
+              <span className="text-ileys-green-dark text-sm font-medium">
+                Trusted by Leading Organizations in Somalia
+              </span>
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 animate-fade-in-up leading-tight">
-              Innovating{" "}
-              <span className="text-gradient">Sustainable</span>
+              Offering up-to-date
               <br />
-              Solutions for Development
+              <span className="text-gradient">Practical Solutions</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-2xl mx-auto animate-fade-in-up stagger-1 leading-relaxed">
-              Empowering organizations through research, training, and consulting
-              to create meaningful impact across Somalia.
+              Empowering organizations through research, training, and
+              consulting to create meaningful impact across East Africa and
+              beyond.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up stagger-2">
               <Link href="/services">
-                <Button size="lg" className="group bg-ileys-green hover:bg-ileys-green-dark text-white text-lg px-8 py-6 rounded-xl shadow-xl shadow-ileys-green/20 transition-all duration-300 hover:scale-105">
+                <Button
+                  size="lg"
+                  className="group bg-ileys-green hover:bg-ileys-green-dark text-white text-lg px-8 py-6 rounded-xl shadow-xl shadow-ileys-green/20 transition-all duration-300 hover:scale-105"
+                >
                   Explore Our Services
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 group-hover:translate-x-1 transition-transform">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="ml-2 group-hover:translate-x-1 transition-transform"
+                  >
                     <path d="M5 12h14" />
                     <path d="m12 5 7 7-7 7" />
                   </svg>
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-xl border-2 border-ileys-green/30 text-ileys-green-dark hover:bg-ileys-green/5 hover:border-ileys-green/50 transition-all duration-300">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-lg px-8 py-6 rounded-xl border-2 border-ileys-green/30 text-ileys-green-dark hover:bg-ileys-green/5 hover:border-ileys-green/50 transition-all duration-300"
+                >
                   Contact Us
                 </Button>
               </Link>
@@ -161,18 +210,32 @@ export default function HomePage() {
                 <span className="text-gradient">Knowledge & Innovation</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Since 2015, ILEYS has been at the forefront of development consulting in Somalia.
-                We bring together a network of experienced professionals with decades of hands-on
-                experience in applied research, strategic management, and institutional development.
+                Since 2015, ILEYS has been at the forefront of development
+                consulting in Somalia. We bring together a network of
+                experienced professionals with decades of hands-on experience in
+                applied research, strategic management, and institutional
+                development.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Our collaborative approach ensures that we work in partnership with organizations
-                to improve knowledge and competence in using research findings for decision making.
+                Our collaborative approach ensures that we work in partnership
+                with organizations to improve knowledge and competence in using
+                research findings for decision making.
               </p>
               <Link href="/about">
                 <Button className="bg-ileys-green hover:bg-ileys-green-dark text-white px-6 py-3 rounded-xl hover-lift">
                   Learn More About Us
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="ml-2"
+                  >
                     <path d="M5 12h14" />
                     <path d="m12 5 7 7-7 7" />
                   </svg>
@@ -183,11 +246,22 @@ export default function HomePage() {
               <div className="aspect-square rounded-3xl bg-gradient-to-br from-ileys-green to-ileys-green-light p-1 hover-lift">
                 <div className="w-full h-full rounded-3xl bg-white flex items-center justify-center overflow-hidden">
                   <div className="text-center p-8">
-                    <div className="w-32 h-32 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-ileys-green to-ileys-green-light flex items-center justify-center shadow-2xl">
-                      <span className="text-6xl font-bold text-white">I</span>
+                    <div className="w-32 h-32 mx-auto mb-6 rounded-2xl bg-white flex items-center justify-center shadow-2xl overflow-hidden border border-gray-100">
+                      <Image
+                        src="/ileys-icon.png"
+                        alt="ILEYS Consulting"
+                        width={128}
+                        height={128}
+                        className="object-contain p-2"
+                        priority
+                      />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">ILEYS Consult</h3>
-                    <p className="text-gray-500">Research • Training • Consulting</p>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      ILEYS Consult
+                    </h3>
+                    <p className="text-gray-500">
+                      Research • Training • Consulting
+                    </p>
                     <div className="mt-6 flex justify-center gap-2">
                       <span className="w-3 h-3 rounded-full bg-ileys-green" />
                       <span className="w-3 h-3 rounded-full bg-ileys-yellow" />
@@ -215,7 +289,8 @@ export default function HomePage() {
               Our Core <span className="text-gradient">Services</span>
             </h2>
             <p className="text-lg text-gray-600">
-              Comprehensive solutions designed to address organizational and social development challenges
+              Comprehensive solutions designed to address organizational and
+              social development challenges
             </p>
           </div>
 
@@ -226,7 +301,9 @@ export default function HomePage() {
                 className={`group bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden card-interactive stagger-${index + 1}`}
               >
                 <CardContent className="p-8">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  >
                     {service.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-ileys-green transition-colors">
@@ -235,9 +312,23 @@ export default function HomePage() {
                   <p className="text-gray-600 leading-relaxed mb-6">
                     {service.description}
                   </p>
-                  <Link href="/services" className="inline-flex items-center text-ileys-green font-semibold group-hover:gap-2 transition-all">
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center text-ileys-green font-semibold group-hover:gap-2 transition-all"
+                  >
                     Learn More
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
+                    >
                       <path d="M5 12h14" />
                       <path d="m12 5 7 7-7 7" />
                     </svg>
@@ -260,7 +351,8 @@ export default function HomePage() {
               Our <span className="text-gradient-gold">Competencies</span>
             </h2>
             <p className="text-lg text-gray-600">
-              Expertise built over years of hands-on experience in development consulting
+              Expertise built over years of hands-on experience in development
+              consulting
             </p>
           </div>
 
@@ -290,7 +382,8 @@ export default function HomePage() {
               Trusted By Leading Organizations
             </h2>
             <p className="text-gray-500">
-              We maintain partnerships with organizations committed to development
+              We maintain partnerships with organizations committed to
+              development
             </p>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
@@ -322,17 +415,24 @@ export default function HomePage() {
               Ready to Transform Your Organization?
             </h2>
             <p className="text-xl text-white/80 mb-10">
-              Let's work together to develop practical solutions for your challenges.
-              Contact us today to discuss your needs.
+              Let us work together to develop practical solutions for your
+              challenges. Contact us today to discuss your needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <Button size="lg" className="bg-white text-ileys-green-dark hover:bg-white/90 text-lg px-8 py-6 rounded-xl shadow-2xl hover:scale-105 transition-all duration-300">
+                <Button
+                  size="lg"
+                  className="bg-white text-ileys-green-dark hover:bg-white/90 text-lg px-8 py-6 rounded-xl shadow-2xl hover:scale-105 transition-all duration-300"
+                >
                   Get Started Today
                 </Button>
               </Link>
               <Link href="/services">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-xl border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-lg px-8 py-6 rounded-xl border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all"
+                >
                   View All Services
                 </Button>
               </Link>

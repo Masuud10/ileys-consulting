@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -23,8 +24,14 @@ export function Header() {
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3 group">
                         <div className="relative">
-                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-ileys-green to-ileys-green-light flex items-center justify-center shadow-lg group-hover:shadow-ileys-green/30 transition-shadow duration-300">
-                                <span className="text-white font-bold text-xl">I</span>
+                            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-lg group-hover:shadow-ileys-green/30 transition-shadow duration-300 overflow-hidden border border-white/20">
+                                <Image
+                                    src="/ileys-icon.png"
+                                    alt="ILEYS Consulting"
+                                    width={48}
+                                    height={48}
+                                    className="object-contain p-1"
+                                />
                             </div>
                             <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-ileys-yellow animate-pulse" />
                         </div>

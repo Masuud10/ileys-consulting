@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   title: "ILEYS Consulting | Research, Training & Consulting",
   description: "ILEYS is a research, training and consulting company specialized in offering practical solutions on organizational and social development challenges in Somalia.",
   keywords: ["consulting", "research", "training", "Somalia", "development", "organizational development"],
+  icons: {
+    icon: "/ileys-icon.png",
+    apple: "/ileys-icon.png",
+  },
 };
 
 export default function RootLayout({
