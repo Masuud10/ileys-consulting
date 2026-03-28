@@ -1,10 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-const contactInfo = [
+type ContactRow = { text: string; href?: string };
+
+const contactInfo: {
+    icon: ReactNode;
+    title: string;
+    rows: ContactRow[];
+}[] = [
     {
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -13,7 +19,10 @@ const contactInfo = [
             </svg>
         ),
         title: "Address",
-        value: "Baidoa, South West State, Somalia",
+        rows: [
+            { text: "Baidoa, South West State, Somalia" },
+            { text: "Ngong Road, Nairobi, Kenya" },
+        ],
     },
     {
         icon: (
@@ -22,8 +31,10 @@ const contactInfo = [
             </svg>
         ),
         title: "Phone",
-        value: "+252 615 575 496",
-        href: "tel:+252615575496",
+        rows: [
+            { text: "+252 615 575 496", href: "tel:+252615575496" },
+            { text: "+254 716 211 499", href: "tel:+254716211499" },
+        ],
     },
     {
         icon: (
@@ -33,8 +44,7 @@ const contactInfo = [
             </svg>
         ),
         title: "Email",
-        value: "ileys.rtcc@gmail.com",
-        href: "mailto:ileys.rtcc@gmail.com",
+        rows: [{ text: "ileys.rtcc@gmail.com", href: "mailto:ileys.rtcc@gmail.com" }],
     },
 ];
 
@@ -60,16 +70,16 @@ export default function ContactPage() {
         <div className="overflow-hidden">
             <section className="relative py-24 lg:py-32 hero-mesh">
                 <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute top-20 left-20 w-72 h-72 bg-ileys-yellow/20 rounded-full blur-3xl animate-float" />
+                    <div className="absolute top-20 left-20 w-72 h-72 bg-ileys-green/10 rounded-full blur-3xl animate-float" />
                 </div>
-                <div className="absolute inset-0 pattern-dots opacity-10" />
+                <div className="absolute inset-0 pattern-dots opacity-[0.07]" />
 
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-4xl mx-auto text-center">
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in-up">
+                        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fade-in-up">
                             Contact <span className="text-gradient-gold">Us</span>
                         </h1>
-                        <p className="text-xl text-white/80 max-w-2xl mx-auto">
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                             Get in touch with our team to discuss your research, training, or consulting needs.
                         </p>
                     </div>
@@ -93,23 +103,33 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <h3 className="font-semibold text-gray-900">{info.title}</h3>
-                                            {info.href ? (
-                                                <a href={info.href} className="text-gray-600 hover:text-ileys-green transition-colors">
-                                                    {info.value}
-                                                </a>
-                                            ) : (
-                                                <p className="text-gray-600">{info.value}</p>
-                                            )}
+                                            <div className="space-y-1">
+                                                {info.rows.map((row) =>
+                                                    row.href ? (
+                                                        <a
+                                                            key={row.text}
+                                                            href={row.href}
+                                                            className="block text-gray-600 hover:text-ileys-green transition-colors"
+                                                        >
+                                                            {row.text}
+                                                        </a>
+                                                    ) : (
+                                                        <p key={row.text} className="text-gray-600">
+                                                            {row.text}
+                                                        </p>
+                                                    )
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
                             </div>
 
-                            <Card className="border-0 shadow-lg bg-gradient-to-br from-ileys-green to-ileys-green-light text-white">
+                            <Card className="border border-gray-200/80 shadow-lg bg-gradient-to-br from-emerald-50 via-slate-50 to-gray-100 text-gray-900">
                                 <CardContent className="p-6">
-                                    <h3 className="text-xl font-bold mb-2">Lead Consultant</h3>
-                                    <p className="text-white/80">Abdiaziz M. Adan</p>
-                                    <p className="text-white/80 text-sm mt-2">General Manager</p>
+                                    <h3 className="text-xl font-bold mb-2 text-gray-900">Lead Consultant</h3>
+                                    <p className="text-gray-700">Abdiaziz M. Adan</p>
+                                    <p className="text-gray-600 text-sm mt-2">General Manager</p>
                                 </CardContent>
                             </Card>
                         </div>

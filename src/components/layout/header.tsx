@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -9,12 +10,15 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
+    { href: "/what-we-do", label: "What we do" },
+    { href: "/thematic-areas", label: "Thematic areas" },
     { href: "/services", label: "Services" },
     { href: "/training", label: "Training" },
     { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {
+    const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -47,16 +51,28 @@ export function Header() {
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center gap-1">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className="relative px-4 py-2 text-gray-200 hover:text-white font-medium transition-colors duration-200 group"
-                            >
-                                {link.label}
-                                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-ileys-green-light to-ileys-yellow group-hover:w-3/4 transition-all duration-300" />
-                            </Link>
-                        ))}
+                        {navLinks.map((link) => {
+                            const active =
+                                link.href === "/"
+                                    ? pathname === "/"
+                                    : pathname === link.href || pathname.startsWith(`${link.href}/`);
+                            return (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className={`relative px-3 py-2 text-sm lg:px-4 lg:text-base font-medium transition-colors duration-200 group ${
+                                        active ? "text-white" : "text-gray-200 hover:text-white"
+                                    }`}
+                                >
+                                    {link.label}
+                                    <span
+                                        className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-ileys-green-light to-ileys-yellow transition-all duration-300 ${
+                                            active ? "w-3/4" : "w-0 group-hover:w-3/4"
+                                        }`}
+                                    />
+                                </Link>
+                            );
+                        })}
                         <Link href="/contact">
                             <Button className="ml-4 bg-gradient-to-r from-ileys-green to-ileys-green-light hover:from-ileys-green-light hover:to-ileys-green text-white shadow-lg hover:shadow-ileys-green/30 transition-all duration-300">
                                 Get in Touch

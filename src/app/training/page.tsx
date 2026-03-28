@@ -65,16 +65,16 @@ export default function TrainingPage() {
         <div className="overflow-hidden">
             <section className="relative py-24 lg:py-32 hero-mesh">
                 <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute top-20 right-20 w-72 h-72 bg-ileys-yellow/20 rounded-full blur-3xl animate-float" />
+                    <div className="absolute top-20 right-20 w-72 h-72 bg-ileys-yellow/10 rounded-full blur-3xl animate-float" />
                 </div>
-                <div className="absolute inset-0 pattern-dots opacity-10" />
+                <div className="absolute inset-0 pattern-dots opacity-[0.07]" />
 
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-4xl mx-auto text-center">
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in-up">
+                        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fade-in-up">
                             Training <span className="text-gradient-gold">Programs</span>
                         </h1>
-                        <p className="text-xl text-white/80 max-w-2xl mx-auto">
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                             Quality, customized training that provides participants with practical skills.
                         </p>
                     </div>
@@ -119,13 +119,14 @@ export default function TrainingPage() {
             </section>
 
             <section className="py-24 hero-mesh relative">
+                <div className="absolute inset-0 pattern-lines opacity-[0.35] pointer-events-none" />
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-3xl mx-auto text-center">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                             Ready to Invest in Your Team?
                         </h2>
                         <Link href="/contact">
-                            <Button size="lg" className="bg-white text-ileys-green-dark hover:bg-white/90 text-lg px-8 py-6 rounded-xl">
+                            <Button size="lg" className="bg-ileys-green hover:bg-ileys-green-dark text-white text-lg px-8 py-6 rounded-xl shadow-md">
                                 Request Training
                             </Button>
                         </Link>

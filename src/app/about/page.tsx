@@ -70,23 +70,23 @@ export default function AboutPage() {
             {/* Hero Section */}
             <section className="relative py-24 lg:py-32 hero-mesh">
                 <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute top-20 right-20 w-72 h-72 bg-ileys-yellow/20 rounded-full blur-3xl animate-float" />
-                    <div className="absolute bottom-20 left-20 w-96 h-96 bg-ileys-green-light/20 rounded-full blur-3xl animate-float stagger-2" />
+                    <div className="absolute top-20 right-20 w-72 h-72 bg-ileys-yellow/10 rounded-full blur-3xl animate-float" />
+                    <div className="absolute bottom-20 left-20 w-96 h-96 bg-ileys-green/10 rounded-full blur-3xl animate-float stagger-2" />
                 </div>
-                <div className="absolute inset-0 pattern-dots opacity-10" />
+                <div className="absolute inset-0 pattern-dots opacity-[0.07]" />
 
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-4xl mx-auto text-center">
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8 animate-fade-in-down">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 backdrop-blur-sm border border-gray-200/80 mb-8 animate-fade-in-down shadow-sm">
                             <span className="w-2 h-2 rounded-full bg-ileys-yellow animate-pulse" />
-                            <span className="text-white/90 text-sm font-medium">Established 2015 in South West State Somalia</span>
+                            <span className="text-gray-700 text-sm font-medium">Established 2015 in South West State Somalia</span>
                         </span>
 
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in-up leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fade-in-up leading-tight">
                             About <span className="text-gradient-gold">ILEYS</span>
                         </h1>
 
-                        <p className="text-xl text-white/80 max-w-2xl mx-auto animate-fade-in-up stagger-1 leading-relaxed">
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in-up stagger-1 leading-relaxed">
                             A research, training and consulting company specialized in offering
                             practical solutions on organizational and social development challenges.
                         </p>

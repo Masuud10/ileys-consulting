@@ -81,7 +81,16 @@ const stats = [
   { value: "100+", label: "Professionals Trained" },
 ];
 
-const partners = ["SAFE", "World Vision", "COOPI", "DRC"];
+const partnerLogos = [
+  {
+    src: "/partners/ministry-livestock-southwest-somalia.png",
+    alt: "Ministry of Livestock, Forestry and Range Southwest State of Somalia",
+  },
+  {
+    src: "/partners/coopi.png",
+    alt: "COOPI Cooperazione Internazionale",
+  },
+];
 
 const competencies = [
   { title: "Strategic Management", icon: "📊" },
@@ -386,15 +395,19 @@ export default function HomePage() {
               development
             </p>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            {partners.map((partner) => (
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
+            {partnerLogos.map((partner) => (
               <div
-                key={partner}
-                className="px-8 py-4 rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
+                key={partner.src}
+                className="flex items-center justify-center px-8 py-8 rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
               >
-                <span className="text-xl font-bold text-gray-400 hover:text-ileys-green transition-colors">
-                  {partner}
-                </span>
+                <Image
+                  src={partner.src}
+                  alt={partner.alt}
+                  width={320}
+                  height={160}
+                  className="object-contain w-auto max-h-28 md:max-h-36"
+                />
               </div>
             ))}
           </div>
@@ -404,17 +417,17 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="py-24 hero-mesh relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-ileys-yellow/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-ileys-green-light/20 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-ileys-yellow/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-ileys-green/10 rounded-full blur-3xl" />
         </div>
-        <div className="absolute inset-0 pattern-lines opacity-20" />
+        <div className="absolute inset-0 pattern-lines opacity-[0.35]" />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
               Ready to Transform Your Organization?
             </h2>
-            <p className="text-xl text-white/80 mb-10">
+            <p className="text-xl text-gray-600 mb-10">
               Let us work together to develop practical solutions for your
               challenges. Contact us today to discuss your needs.
             </p>
@@ -422,7 +435,7 @@ export default function HomePage() {
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-white text-ileys-green-dark hover:bg-white/90 text-lg px-8 py-6 rounded-xl shadow-2xl hover:scale-105 transition-all duration-300"
+                  className="bg-ileys-green hover:bg-ileys-green-dark text-white text-lg px-8 py-6 rounded-xl shadow-lg hover:scale-105 transition-all duration-300"
                 >
                   Get Started Today
                 </Button>
@@ -431,7 +444,7 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-lg px-8 py-6 rounded-xl border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all"
+                  className="text-lg px-8 py-6 rounded-xl border-2 border-gray-300 text-gray-800 bg-white/60 hover:bg-white hover:border-ileys-green/40 transition-all"
                 >
                   View All Services
                 </Button>
